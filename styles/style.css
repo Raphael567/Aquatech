@@ -1,0 +1,207 @@
+/* Define variáveis globais de cor para reutilizar no projeto inteiro */
+:root {
+    --cor-fundo: #0D0D0D;       /* Cor de fundo principal */
+    --cor-primaria: #40AAB5;    /* Cor principal de destaque */
+    --cor-secundaria: #d7bc99;  /* Cor secundária, usada por exemplo no menu */
+    --cor-destaque: #e51763;    /* Cor de destaque forte */
+    --cor-branca: #FFFFFF;      /* Branco padrão */
+    --cor-preta: #000000;       /* Preto padrão */
+    --cor-cinza: #D9D9D9;       /* Cinza claro usado em fundos de blocos */
+}
+
+/* Reset básico para remover margens e paddings padrão do navegador */
+* {
+    margin: 0; /* Remove margem padrão */
+    padding: 0; /* Remove espaçamento interno padrão */
+    box-sizing: border-box; /* Faz width e height considerarem padding e borda */
+    font-family: Arial, Helvetica, sans-serif; /* Define a fonte padrão do site */
+}
+
+/* Remove o sublinhado padrão dos links */
+a {
+    text-decoration: none;
+}
+
+/* Classe reutilizável para limitar a largura e centralizar conteúdo */
+.container {
+    width: min(1300px, 90%); /* Usa 1300px no máximo, ou 90% da tela se ela for menor */
+    margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+/* Estilo geral do cabeçalho */
+.header {
+    background-color: var(--cor-fundo); /* Fundo escuro */
+    border-bottom: 5px solid var(--cor-primaria); /* Linha inferior destacada */
+}
+
+/* Organiza os elementos internos do header */
+.header .container {
+    display: flex; /* Coloca os itens lado a lado */
+    justify-content: space-between; /* Um item em cada extremidade */
+    align-items: center; /* Alinha verticalmente ao centro */
+    padding: 2rem 0; /* Espaçamento vertical interno */
+}
+
+/* Estiliza o título/logo */
+.titulo {
+    color: #40AAB5; /* Cor do título */
+    font-size: 2.3rem; /* Tamanho da fonte */
+}
+
+/* Lista do menu de navegação */
+.navbar {
+    display: flex; /* Coloca os itens em linha */
+    gap: clamp(1rem, 2vw, 2rem); /* Espaçamento responsivo entre os itens */
+    list-style: none; /* Remove as bolinhas da lista */
+}
+
+/* clamp(min, ideal, max)
+   Define um valor responsivo que se adapta ao tamanho da tela.
+   - min: valor mínimo permitido
+   - ideal: valor que cresce/diminui com a tela (ex: vw)
+   - max: valor máximo permitido
+   O navegador usa o valor ideal, mas nunca deixa passar dos limites.
+   Ex: clamp(1rem, 5vw, 3rem) → cresce com a tela, mas não fica menor que 1rem nem maior que 3rem */
+
+/* Estiliza os links da navbar e também os li da navbar */
+.navbar a, 
+.navbar li {
+   color: var(--cor-secundaria); /* Cor dos textos */
+    font-size: 1.2rem; /* Tamanho da fonte */
+}
+
+/* Classe usada para destacar o item atual */
+.agora {
+    font-weight: bold; /* Deixa o texto em negrito */
+}
+
+/* Seção principal do banner */
+.banner {
+    min-height: 80vh; /* Altura mínima de 80% da altura da tela */
+    background: url('/assets/imgs/bg-jelly-fish-para-home.png') center/cover no-repeat; /* Imagem de fundo centralizada e cobrindo toda a área */
+    display: flex; /* Ativa flexbox */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+}
+
+/* Container interno do banner */
+.banner .container {
+    display: flex; /* Usa flex no conteúdo interno */
+    justify-content: center; /* Centraliza horizontalmente os itens internos */
+    max-width: 300px; /* Limita a largura máxima */
+}
+
+/* Texto do banner */
+.banner .container p {
+    max-width: 600px; /* Limita a largura máxima do parágrafo */
+    font-size: clamp(2rem, 5vw, 3.125rem); /* Tamanho responsivo da fonte */
+    color: var(--cor-branca); /* Texto branco */
+}
+
+/* Texto em destaque dentro do banner */
+.banner span {
+    font-weight: bold; /* Negrito */
+}
+
+/* Fundo da seção social */
+.social {
+    background-color: var(--cor-cinza); /* Fundo cinza claro */
+}
+
+/* Container das caixas da seção social */
+.boxes {
+    display: flex; /* Coloca as caixas lado a lado */
+    justify-content: space-between; /* Distribui espaço entre elas */
+    text-align: center; /* Centraliza o texto */
+    gap: clamp(1.5rem, 5vw, 4rem); /* Espaço responsivo entre as caixas */
+    padding: 8rem 0; /* Espaçamento vertical da seção */
+}
+
+/* Cada box individual */
+.box {
+    display: flex; /* Flexbox */
+    flex-direction: column; /* Organiza os itens em coluna */
+    align-items: center; /* Centraliza horizontalmente */
+    gap: 1.5rem; /* Espaço entre os elementos internos */
+    color: var(--cor-preta); /* Cor do texto */
+    font-size: 2rem; /* Tamanho do texto */
+    max-width: 300px; /* Limita a largura */
+}
+
+/* Imagens das boxes */
+.box img {
+    width: 100%; /* Ocupa toda a largura possível do elemento */
+    max-width: 250px; /* Mas não passa de 250px */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+/* Título da box */
+.box h4 {
+    color: var(--cor-destaque); /* Cor destaque */
+    font-weight: bold; /* Negrito */
+}
+
+/* Seção de login */
+.login {
+    min-height: 80vh; /* Altura mínima de 80% da tela */
+    background: url('/assets/imgs/bg-jelly-fish-para_outras_pags.png') center/cover no-repeat; /* Fundo com imagem */
+    color: var(--cor-destaque); /* Cor padrão dos textos */
+    text-align: center; /* Centraliza os textos */
+    display: flex; /* Flexbox */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    font-weight: bold; /* Texto em negrito */
+}
+
+/* Card do formulário */
+.card {
+    justify-self: center; /* Tentativa de centralizar em grid */
+    background-color: var(--cor-cinza); /* Fundo cinza */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: clamp(1.2rem, 3vw, 2.5rem); /* Espaçamento interno responsivo */
+    width: min(700px, 90%); /* Largura máxima de 700px ou 90% da tela */
+}
+
+/* Título dentro do card */
+.card h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem); /* Tamanho responsivo */
+}
+
+/* Card da tela de cadastro */
+.card-cadastro {
+    margin: 5rem 0rem; /* Margin para não grudar com o footer */
+}
+
+/* Bloco de cada campo do formulário */
+.campo {
+    text-align: start; /* Alinha o texto à esquerda */
+    margin: 2rem; /* Espaçamento externo em todos os lados */
+}
+
+/* Inputs do formulário */
+.campo input {
+    width: 100%; /* Ocupa toda a largura disponível */
+    border: 2px solid var(--cor-primaria); /* Borda colorida */
+    border-radius: 5px; /* Bordas arredondadas */
+    padding: 0.75rem 1rem; /* Espaçamento interno */
+    text-align: center; /* Centraliza o texto digitado */
+    font-size: 1rem; /* Tamanho da fonte */
+}
+
+/* Botão */
+.botao {
+    background-color: var(--cor-destaque); /* Fundo do botão */
+    border: none; /* Remove borda padrão */
+    padding: 0.8rem 3rem; /* Espaçamento interno */
+    font-size: 1rem; /* Tamanho do texto */
+    color: var(--cor-branca); /* Cor da fonte */
+    border-radius: 10px; /* Bordas arredondadas */
+    cursor: pointer; /* Mostra a mãozinha ao passar o mouse */
+}
+
+/* Rodapé */
+.footer {
+    background-color: #36B7CC; /* Cor de fundo */
+    color: var(--cor-branca); /* Texto branco */
+    text-align: center; /* Centraliza o texto */
+    padding: 3rem 1rem 4rem; /* Espaçamento interno */
+}
